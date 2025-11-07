@@ -9,7 +9,7 @@ from simple_ml_basic import SimpleLinearRegression, train_test_split
 def test_model_initialization():
     """Test that the model initializes correctly."""
     model = SimpleLinearRegression()
-    assert model.is_trained == False
+    assert not model.is_trained
     assert model.slope == 0
     assert model.intercept == 0
     print("✓ Model initialization test passed")
@@ -22,7 +22,7 @@ def test_model_training():
     y = [2, 4, 6, 8, 10]
     
     model.train(X, y)
-    assert model.is_trained == True
+    assert model.is_trained
     assert abs(model.slope - 2.0) < 0.01  # Should be close to 2
     assert abs(model.intercept - 0.0) < 0.01  # Should be close to 0
     print("✓ Model training test passed")

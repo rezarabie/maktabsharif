@@ -11,7 +11,7 @@ import pandas as pd
 def test_model_initialization():
     """Test that the model initializes correctly."""
     model = SimpleMLModel()
-    assert model.is_trained == False
+    assert not model.is_trained
     assert model.model is not None
 
 
@@ -22,7 +22,7 @@ def test_model_training():
     y = np.array([2, 4, 6, 8, 10])
     
     model.train(X, y)
-    assert model.is_trained == True
+    assert model.is_trained
 
 
 def test_model_prediction():
